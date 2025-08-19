@@ -1,30 +1,10 @@
-// Last updated: 8/11/2025, 2:47:04 PM
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
- */
+// Last updated: 8/19/2025, 7:32:13 PM
 class Solution {
-    int sum = 0 ;
-    public TreeNode bstToGst(TreeNode root) {
-        if(root!=null){
-            bstToGst(root.right);
-            root.val += sum;
-            sum = root.val;
-            bstToGst(root.left);
+    public int[] buildArray(int[] nums) {
+        int[] ans = new int[nums.length];
+        for(int i = 0 ; i < nums.length ; i++){
+            ans[i] = nums[nums[i]];
         }
-        return root;
-
-        
+        return ans;
     }
 }
