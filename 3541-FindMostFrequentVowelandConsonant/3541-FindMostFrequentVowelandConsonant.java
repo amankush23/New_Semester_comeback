@@ -1,28 +1,16 @@
-// Last updated: 8/20/2025, 10:45:00 PM
+// Last updated: 8/20/2025, 10:57:37 PM
 class Solution {
-    public int maxFreqSum(String s) {
-        int[] freq = new int[26];
-
-        // Count frequency of each character
-        for (char ch : s.toCharArray()) {
-            freq[ch - 'a']++;
-        }
-
-        String vowels = "aeiou";
-        int maxVowel = 0, maxConsonant = 0;
-
-        // Find max vowel and consonant frequencies
-        for (int i = 0; i < 26; i++) {
-            char ch = (char)(i + 'a');
-            if (freq[i] > 0) {
-                if (vowels.indexOf(ch) != -1) {  // vowel check
-                    maxVowel = Math.max(maxVowel, freq[i]);
-                } else {  // consonant
-                    maxConsonant = Math.max(maxConsonant, freq[i]);
-                }
+    public int countDigits(int num) {
+        int count= 0;
+        int orig = num;
+        while(num !=0){
+            int ld = num % 10;
+            if(ld != 0 && orig % ld == 0){
+                count++;
             }
+            num = num/10;
         }
+        return count;
 
-        return maxVowel + maxConsonant;
     }
 }
