@@ -1,16 +1,26 @@
-// Last updated: 8/20/2025, 10:57:37 PM
+// Last updated: 8/20/2025, 10:59:32 PM
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
 class Solution {
-    public int countDigits(int num) {
-        int count= 0;
-        int orig = num;
-        while(num !=0){
-            int ld = num % 10;
-            if(ld != 0 && orig % ld == 0){
-                count++;
-            }
-            num = num/10;
+    public boolean checkTree(TreeNode root) {
+        if(root.left.val+root.right.val == root.val){
+            return true;
         }
-        return count;
-
+        else{
+            return false;
+        }
     }
 }
