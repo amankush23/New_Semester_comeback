@@ -1,4 +1,4 @@
-// Last updated: 8/23/2025, 11:38:54 PM
+// Last updated: 8/24/2025, 12:12:23 AM
 class Solution {
     public int subarraySum(int[] nums) {
         int n = nums.length;
