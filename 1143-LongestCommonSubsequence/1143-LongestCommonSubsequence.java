@@ -1,4 +1,4 @@
-// Last updated: 9/3/2025, 11:13:16 PM
+// Last updated: 9/3/2025, 11:24:33 PM
 class Solution {
     public int longestCommonSubsequence(String text1, String text2) {
         int[][] dp = new int[text1.length()+1][text2.length()+1];
