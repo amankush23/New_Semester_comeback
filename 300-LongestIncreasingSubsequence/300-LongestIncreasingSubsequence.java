@@ -1,4 +1,4 @@
-// Last updated: 9/1/2025, 11:40:11 AM
+// Last updated: 9/3/2025, 12:35:46 PM
 class Solution {
     public int lengthOfLIS(int[] nums) {
         List<Integer> res = new ArrayList<>();
