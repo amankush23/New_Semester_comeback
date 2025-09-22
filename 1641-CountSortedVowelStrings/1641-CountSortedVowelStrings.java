@@ -1,15 +1,19 @@
-// Last updated: 9/23/2025, 12:45:07 AM
+// Last updated: 9/23/2025, 12:45:52 AM
 class Solution {
     public int countVowelStrings(int n) {
-        int a = 1, e = 1, i = 1, o = 1, u = 1;
+        int[] dp = new int[]{1, 1, 1, 1, 1};
+        int ans = 0;
 
         while (--n > 0) {
-            o += u;
-            i += o;
-            e += i;
-            a += e;
+            for (int i = 3; i >= 0; i--) {
+                dp[i] += dp[i + 1];
+            }
         }
 
-        return a + e + i + o + u;
+        for (int x : dp) {
+            ans += x;
+        }
+
+        return ans;
     }
 }
