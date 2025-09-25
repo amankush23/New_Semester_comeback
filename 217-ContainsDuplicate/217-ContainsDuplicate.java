@@ -1,4 +1,4 @@
-// Last updated: 9/25/2025, 10:37:52 PM
+// Last updated: 9/25/2025, 10:45:30 PM
 class Solution {
     public boolean containsDuplicate(int[] nums) {
         HashMap<Integer, Integer> map = new HashMap<>();
