@@ -1,4 +1,4 @@
-// Last updated: 9/26/2025, 9:36:21 PM
+// Last updated: 9/26/2025, 9:42:49 PM
 class Solution {
     public int findMinArrowShots(int[][] points) {
         int  n = points.length;
