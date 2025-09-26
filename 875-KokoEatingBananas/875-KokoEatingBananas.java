@@ -1,4 +1,4 @@
-// Last updated: 9/26/2025, 2:31:26 PM
+// Last updated: 9/26/2025, 2:31:34 PM
 class Solution {
 
     public boolean canEat(int [] piles,int h,int mid) {
