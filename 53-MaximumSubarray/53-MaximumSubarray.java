@@ -1,4 +1,4 @@
-// Last updated: 8/4/2025, 11:13:30 PM
+// Last updated: 9/26/2025, 3:24:30 PM
 class Solution {
     public int maxSubArray(int[] nums) {
         return maxSubarraySum(nums);
