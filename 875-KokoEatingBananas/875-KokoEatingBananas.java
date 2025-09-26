@@ -1,4 +1,4 @@
-// Last updated: 9/26/2025, 2:31:34 PM
+// Last updated: 9/26/2025, 2:33:08 PM
 class Solution {
 
     public boolean canEat(int [] piles,int h,int mid) {
@@ -17,7 +17,7 @@ class Solution {
         return true;
     }
     public int minEatingSpeed(int[] piles, int ho) {
-        int l =1;
+        int l = 1;
         int h = Arrays.stream(piles).max().getAsInt();
         int eat = 0;
         while(l <= h) {
