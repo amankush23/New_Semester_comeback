@@ -1,30 +1,36 @@
-// Last updated: 9/28/2025, 9:44:58 PM
+// Last updated: 9/28/2025, 9:45:36 PM
 class Solution {
-    public int splitArray(int[] weights, int days) {
-        int maxCap = 0;
-        int minCap = 0;
-        for (int weight : weights) {
-            maxCap += weight;
-            minCap = Math.max(minCap, weight);
+    public int splitArray(int[] nums, int k) {
+        int left = 0, right = 0;
+        for (int num : nums) {
+            left = Math.max(left, num); 
+            right += num;             
         }
-        while (minCap < maxCap) {
-            int mid = minCap + (maxCap - minCap) / 2;
-            int day = 1;
-            int sum = 0;
-            for (int weight : weights) {
-                if (sum + weight > mid) {
-                    day++;
-                    sum = 0;
-                }
-                sum += weight;
+
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (canSplit(nums, k, mid)) {
+                right = mid;
+            } else {
+                left = mid + 1; 
             }
-                if (day > days) {
-                    minCap = mid + 1;
-                }else{
-                    maxCap = mid;
-                    
-                }
         }
-        return minCap;
+
+        return left; 
+    }
+
+    private boolean canSplit(int[] nums, int k, int mid) {
+        int count = 1; 
+        int sum = 0;
+        for (int num : nums) {
+            if (sum + num > mid) {
+                count++;
+                sum = num;
+                if (count > k) return false; 
+            } else {
+                sum += num;
+            }
+        }
+        return true;
     }
 }
