@@ -1,4 +1,4 @@
-// Last updated: 10/5/2025, 3:32:33 PM
+// Last updated: 10/6/2025, 1:42:28 PM
 class Solution {
     public boolean isMatch(String s, String p) {
         int m = s.length(), n = p.length();
