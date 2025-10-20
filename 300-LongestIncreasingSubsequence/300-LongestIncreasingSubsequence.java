@@ -1,4 +1,4 @@
-// Last updated: 10/7/2025, 2:45:34 PM
+// Last updated: 10/20/2025, 2:49:02 PM
 class Solution {
     public int lengthOfLIS(int[] nums) {
         return LIS(nums);
@@ -13,26 +13,12 @@ class Solution {
                 len++;
             }
             else{
-                int idx = BinarySearch(dp, 0, len-1, arr[i]);
+                int idx = Arrays.binarySearch(dp, 0, len-1, arr[i]);
+                if (idx < 0) idx = -(idx + 1);
                 dp[idx] = arr[i];
 
             }
         }
         return len;
-    }
-    public static int BinarySearch(int[] dp, int si, int ei, int item){
-        int idx = 0;
-        while(si <= ei){
-            int mid = (si+ei)/2;
-            if(dp[mid] >= item){
-                idx = mid;
-                ei=mid-1;
-            }
-            else{
-                si=mid+1;
-            }
-            
-        }
-        return idx;
     }
 }
