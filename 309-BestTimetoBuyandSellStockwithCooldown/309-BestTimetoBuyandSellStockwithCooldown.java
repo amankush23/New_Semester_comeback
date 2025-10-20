@@ -1,4 +1,4 @@
-// Last updated: 10/20/2025, 3:52:05 PM
+// Last updated: 10/20/2025, 3:54:00 PM
 class Solution {
     public int maxProfit(int[] prices) {
         int n = prices.length;
@@ -6,17 +6,15 @@ class Solution {
         for (int i = 0; i < n; i++) Arrays.fill(dp[i], -1);
         return f(0, 1, prices, dp);
     }
-    public int f(int ind, int buy, int[] prices, int[][] dp) {
-        if (ind >= prices.length) return 0;
-        if (dp[ind][buy] != -1) return dp[ind][buy];
+    public int f(int i, int j, int[] prices, int[][] dp) {
+        if (i >= prices.length) return 0;
+        if (dp[i][j] != -1) return dp[i][j];
 
-        if (buy == 1) {
-            dp[ind][buy] = Math.max(
-                -prices[ind] + f(ind + 1, 0, prices, dp),f(ind + 1, 1, prices, dp));
+        if (j == 1) {
+            dp[i][j] = Math.max(-prices[i] + f(i + 1, 0, prices, dp),f(i + 1, 1, prices, dp));
         } else {
-            dp[ind][buy] = Math.max(
-                prices[ind] + f(ind + 2, 1, prices, dp), f(ind + 1, 0, prices, dp));
+            dp[i][j] = Math.max(prices[i] + f(i + 2, 1, prices, dp), f(i + 1, 0, prices, dp));
         }
-        return dp[ind][buy];
+        return dp[i][j];
     }
 }
