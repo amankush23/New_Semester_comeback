@@ -1,4 +1,4 @@
-// Last updated: 8/30/2025, 10:44:08 PM
+// Last updated: 10/21/2025, 9:38:32 PM
 class MyStack {
     private Queue<Integer> q;
     public MyStack() {
