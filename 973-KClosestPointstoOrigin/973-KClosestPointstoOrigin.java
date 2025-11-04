@@ -1,4 +1,4 @@
-// Last updated: 11/4/2025, 11:04:36 PM
+// Last updated: 11/4/2025, 11:07:36 PM
 class Solution {
     public int[][] kClosest(int[][] points, int k) {
         PriorityQueue<int[]> pq = new PriorityQueue<>((e1, e2)->{
@@ -17,7 +17,7 @@ class Solution {
             int i = 0;
             while( i < k){
                 int[] ele = pq.poll();
-                int dis = ele[0], idx = ele[1];
+                int idx = ele[1];
                 res[i][0] = points[idx][0];
                 res[i][1] = points[idx][1];
                 i++;
