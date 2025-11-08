@@ -1,4 +1,4 @@
-// Last updated: 11/7/2025, 9:56:33 PM
+// Last updated: 11/8/2025, 11:30:45 PM
 class Solution {
     public boolean canWinNim(int n) {
         
