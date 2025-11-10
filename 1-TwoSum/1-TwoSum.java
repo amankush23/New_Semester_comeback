@@ -1,4 +1,4 @@
-// Last updated: 8/4/2025, 11:14:20 PM
+// Last updated: 11/10/2025, 10:56:41 PM
 class Solution {
     public int[] twoSum(int[] nums, int target) {
         Scanner sc = new Scanner(System.in);
