@@ -1,4 +1,4 @@
-// Last updated: 11/2/2025, 10:15:38 PM
+// Last updated: 11/13/2025, 11:40:21 PM
 class Solution {
     public ListNode middleNode(ListNode head) {
         ListNode slow = head;
