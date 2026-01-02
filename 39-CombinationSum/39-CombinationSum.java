@@ -1,23 +1,22 @@
-// Last updated: 8/4/2025, 11:13:40 PM
-class Solution {
-    public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        List<List<Integer>> ans = new ArrayList<>();
-        List<Integer> ll = new ArrayList<>();
-        Combination(candidates, target, ll, 0,ans);
-        return ans;
-}
-    public static void Combination(int[] coin, int ammount,List<Integer> ll, int idx,List<List<Integer>> ans){
-        if(ammount == 0){
-            // System.out.println(ll);
-            ans.add(new ArrayList<>(ll));
-            return;
-        }
-        for(int i = idx; i < coin.length;i++){
-            if(ammount >= coin[i]){
-                ll.add(coin[i]);
-                Combination(coin, ammount-coin[i], ll, i,ans);
-                ll.remove(ll.size()-1);
-            }
-        }
-    }
-}
+// Last updated: 1/2/2026, 11:03:48 PM
+1class Solution {
+2    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+3        List<List<Integer>> res = new ArrayList<>();
+4        List<Integer> arr = new ArrayList<>();
+5        Combination(candidates, target, arr, 0, res);
+6        return res;
+7    }
+8    public static void Combination(int[] can, int target, List<Integer> arr, int idx, List<List<Integer>> res){
+9        if(target == 0 ){
+10            res.add(new ArrayList<>(arr));
+11            return;
+12        }
+13        for(int i = idx; i < can.length; i++){
+14            if(can[i] <= target){
+15                arr.add(can[i]);
+16                Combination(can, target-can[i], arr, i , res);
+17                arr.remove(arr.size()-1);
+18            }
+19        }
+20    }
+21}
