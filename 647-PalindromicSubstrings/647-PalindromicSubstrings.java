@@ -1,31 +1,24 @@
-// Last updated: 8/4/2025, 11:11:13 PM
-class Solution {
-    public int countSubstrings(String s) {
-        return Count_Palindromic(s);
-    }
-    public static int Count_Palindromic(String s){
-        int odd = 0;
-        //odd length
-        for(int axis = 0; axis < s.length(); axis++){
-            for(int orbit = 0; axis-orbit>=0 && axis+orbit<s.length(); orbit++){
-                if(s.charAt(axis-orbit) != s.charAt(axis+orbit)){
-                    break;
-                }
-                odd++;
-
-            }
-        }
-        //even length
-        int even= 0;
-
-        for(double axis = 0.5; axis < s.length(); axis++){
-            for(double orbit = 0.5; axis-orbit>=0 && axis+orbit<s.length(); orbit++){
-                if(s.charAt((int)(axis-orbit)) != s.charAt((int)(axis+orbit))){
-                    break;
-                }
-                even++;
-            }
-        }
-        return odd+even;
-    }
-}
+// Last updated: 1/4/2026, 11:44:35 AM
+1class Solution {
+2    public int countSubstrings(String s) {
+3        return check(s, 0, 0);
+4    }
+5    public int check(String s, int i, int j) {
+6        if (i == s.length()) return 0;
+7        if (j == s.length()) return check(s, i + 1, i + 1);
+8        int count = 0;
+9        if(isPalindrome(s, i, j)) count +=1;
+10        return count+ check(s, i, j+1);
+11    }
+12    public boolean isPalindrome(String s, int i, int j) {
+13        while (i < j) {
+14            if (s.charAt(i) != s.charAt(j)) {
+15                return false;
+16            }
+17            i++;
+18            j--;
+19        }
+20        return true;
+21    }
+22}
+23
