@@ -1,16 +1,17 @@
-// Last updated: 1/3/2026, 12:20:53 PM
+// Last updated: 1/5/2026, 10:05:23 PM
 1class Solution {
 2    public int climbStairs(int n) {
-3        if (n <= 2) return n; // Base cases: f(1) = 1, f(2) = 2
-4
-5        int first = 1, second = 2;
-6        for (int i = 3; i <= n; i++) {
-7            int third = first + second;
-8            first = second;
-9            second = third;
+3        Map<Integer, Integer> memo = new HashMap<>();
+4        return climbStairs(n, memo);
+5    }
+6    
+7    private int climbStairs(int n, Map<Integer, Integer> memo) {
+8        if (n == 0 || n == 1) {
+9            return 1;
 10        }
-11
-12        return second;
-13    }
-14}
-15
+11        if (!memo.containsKey(n)) {
+12            memo.put(n, climbStairs(n-1, memo) + climbStairs(n-2, memo));
+13        }
+14        return memo.get(n);
+15    }
+16}
