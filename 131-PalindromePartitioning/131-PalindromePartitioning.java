@@ -1,4 +1,4 @@
-// Last updated: 1/6/2026, 12:49:07 PM
+// Last updated: 1/6/2026, 12:52:02 PM
 1public class Solution {
 2    public List<List<String>> partition(String s) {
 3        List<List<String>> result = new ArrayList<>();
