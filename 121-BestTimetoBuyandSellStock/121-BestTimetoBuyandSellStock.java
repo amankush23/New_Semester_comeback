@@ -1,4 +1,4 @@
-// Last updated: 12/30/2025, 7:38:37 PM
+// Last updated: 1/6/2026, 3:15:23 PM
 1class Solution {
 2    public int maxProfit(int[] prices) {
 3        return Max_Profit(prices);
@@ -17,11 +17,6 @@
 16                profit = ans;
 17            }
 18        }
-19
-20        // if (profit > 0) {
-21            return profit;
-22        // } else {
-23        //     return 0;
-24        // }
-25    }
-26}
+19            return profit;
+20    }
+21}
